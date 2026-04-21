@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MemeHouse</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NIELIT IMPHAL — 2nd Semester Hall of Legends</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <h1>Welcome to MemeHouse!</h1>
+
+  <!-- PARCHMENT NOISE OVERLAY -->
+  <div class="noise-overlay"></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="crest left">⚔️</div>
+      <div class="header-text">
+        <div class="institute-name">NIELIT · IMPHAL</div>
+        <h1 class="title">HALL OF LEGENDS</h1>
+        <div class="subtitle">2nd Semester · Jan–Jun 2026 · <span class="meme-text">The Chosen Ones</span></div>
+      </div>
+      <div class="crest right">🛡️</div>
+    </div>
+    <div class="header-banner">"One does not simply pass the semester without memes."</div>
+  </header>
+
+  <!-- CONTROLS -->
+  <div class="controls-bar">
+    <div class="controls-inner">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search by name or roll number..." />
+      </div>
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="BSc CS">B.Sc CS</button>
+        <button class="filter-btn" data-filter="Section A">BCA-A</button>
+        <button class="filter-btn" data-filter="Section B">BCA-B</button>
+        <button class="filter-btn" data-filter="SECTION C">BCA-C</button>
+      </div>
+      <div class="count-display">
+        <span id="visibleCount">189</span> students
+      </div>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <main class="grid-container" id="studentGrid">
+    <!-- Cards injected by JS -->
+  </main>
+
+  <!-- MEME REASON MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-meme-preview" id="modalMemePreview"></div>
+      <div class="modal-content">
+        <h2 class="modal-name" id="modalName"></h2>
+        <div class="modal-roll" id="modalRoll"></div>
+        <div class="modal-divider">— THE SCROLL OF REASON —</div>
+        <div id="modalReason" class="modal-reason"></div>
+        <div class="modal-footer">Why did they choose this meme? Only the Council knows.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>NIELIT Imphal · Hall of Legends · 2nd Semester 2026</div>
+    <div class="footer-meme">"This is fine." — Every student, every exam season</div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
